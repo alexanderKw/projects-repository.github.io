@@ -1,5 +1,6 @@
 /*POKEDEX*/
 (function($) {
+	"use strict";
 	var quantity = 12;
 	console.log(quantity);
 	var url = 'http://pokeapi.co/api/v1/pokemon/?limit=';
@@ -11,7 +12,7 @@
 			var json = eval('(' + xhttp.responseText + ')');
 			for(i = 0; i < json.objects.length; i++) {
 				console.log(json.objects[i].national_id);
-					$('.small-card-section').append($('<div class="small-card">' +
+				$('.small-card-section').append($('<div class="small-card">' +
 				'<img src="http://pokeapi.co/media/img/' + json.objects[i].national_id + '.png">' +
 				'<h2 class="title">' + json.objects[i].name +
 				'<span class="title-2">' + json.objects[i].national_id + '</span>' + '</h2>' +
@@ -34,6 +35,7 @@
 				'<p><span class="title-2">Total moves</span>' +
 				'<span class="title-2">' + json.objects[i].moves.length + '</span></p>'+'</div>'));
 			}
+			
 			$('.small-card').click(function() {
 				$('.new-card').remove();
 				$(this).clone().prependTo($('.hight-card-section')).removeClass().addClass('new-card');
@@ -42,7 +44,6 @@
 			});
 
 			$('.more').click(function() {
-				
 				xhttp.onreadystatechange();
 				quantity += 12;
 				// return d;
