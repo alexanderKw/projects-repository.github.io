@@ -7,6 +7,11 @@ h2,
 p {
 	margin: 0;
 }
+img {
+	border: 1px solid #000;
+	height: auto;
+	width: 100%;
+}
 .hight-card-section,
 .small-card,
 .new-card .type,
@@ -19,17 +24,27 @@ p {
 	max-width: 1000px;
 	margin: 0 auto;
 	overflow: hidden;
-	padding-left: 8px;
+	padding: 0 0 30px 8px;
 }
 .h1 {
-	border: 1px solid #000;
+	border: 2px solid #000;
 	margin: 0 auto 30px;
 	text-align: center;
 	width: 70%;
 }
+.value {
+	float: right;
+	text-align: center;
+	width: 40%;
+}
+.title-2 {
+	display: none;
+}
 .small-card-section {
 	float: left;
 	overflow: hidden;
+	position: relative;
+	padding-bottom: 50px;
 	text-transform: capitalize;
 	width: 72%;
 }
@@ -54,13 +69,16 @@ p {
 .small-card {
 	border: 2px solid #000;
 	float: left;
-	min-height: 300px;
-	margin: 0 4% 4% 0;
+	margin: 0 5% 5% 0;
 	padding: 10px;
-	width: 29%;
+	width: 30%;
+	min-height: 270px;
+}
+.small-card:nth-child(3n + 1) {
+	margin-right: 0;
 }
 .small-card:hover {
-	background: rgba(0, 0, 0, .1);
+	background: rgba(227, 229, 231, .3);
 	cursor: pointer;
 }
 .new-card {
@@ -73,11 +91,6 @@ p {
 	padding: 3px 0;
 	text-align: center;
 	width: 39%;
-}
-img {
-	border: 1px solid #000;
-	height: auto;
-	width: 100%;
 }
 .title {
 	border-bottom: 1px solid #000;
@@ -96,24 +109,35 @@ img {
 .new-title-2:nth-child(odd) {
 	border-right: 0;
 }
-.value {
-	float: right;
-	text-align: center;
-	width: 40%;
+.more {
+	background: #008CFF;
+	border: 1px solid #6C757E;
+	border-radius: 13px;
+	bottom: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+	outline: none;
+	padding: 12px 8px;
+	position: absolute;
+	width: 100%;
 }
-.title-2 {
-	display: none;
+.more:hover {
+	opacity: .8;
 }
-/* MOBILE */
+
+/* MOBILE STYLES */
 @media only screen and (max-width: 761px) {
 	.title {
 		font-size: 19px;
 	}
 	.small-card-section {
+		padding-bottom: 70px;
 		width: 42%;
 	}
 	.small-card {
 		float: none;
+		min-height: inherit;
 		width: 100%;
 	}
 	.hight-card-section {
