@@ -8,7 +8,7 @@ p {
 	margin: 0;
 }
 img {
-	border: 1px solid #000;
+	border: 1px solid #BDBDBD;
 	height: auto;
 	width: 100%;
 }
@@ -27,7 +27,7 @@ img {
 	padding: 0 0 30px 8px;
 }
 .h1 {
-	border: 2px solid #000;
+	border: 2px solid #4E4E4E;
 	margin: 0 auto 30px;
 	text-align: center;
 	width: 70%;
@@ -67,7 +67,7 @@ img {
 	content: " #0";
 }
 .small-card {
-	border: 2px solid #000;
+	border: 2px solid #4E4E4E;
 	float: left;
 	margin: 0 5% 5% 0;
 	padding: 10px;
@@ -82,22 +82,21 @@ img {
 	cursor: pointer;
 }
 .new-card {
-	border: 2px solid #000;
+	border: 2px solid #4E4E4E;
 	padding: 8px 8px 15px;
 }
 .new-card .type {
-	border: 1px solid #000;
+	border: 1px solid #ABABAB;
 	display: inline-block;
 	padding: 3px 0;
 	text-align: center;
 	width: 39%;
 }
 .title {
-	border-bottom: 1px solid #000;
 	text-align: center;
 }
 .new-title-2 {
-	border: 1px solid #000;
+	border: 1px solid #ABABAB;
 	display: inline-block;
 	padding: 3px 0;
 	text-align: center;
@@ -123,10 +122,10 @@ img {
 	width: 100%;
 }
 .more:hover {
-	opacity: .8;
+	opacity: .9;
 }
 
-/* MOBILE STYLES */
+/* MOBILE */
 @media only screen and (max-width: 761px) {
 	.title {
 		font-size: 19px;
