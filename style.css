@@ -33,10 +33,6 @@ p {
 	text-transform: capitalize;
 	width: 72%;
 }
-.small-card-section:hover {
-	background: rgba(0, 0, 0, .1);
-	cursor: pointer;
-}
 .hight-card-section {
 	left: 72%;
 	max-width: 300px;
@@ -62,6 +58,10 @@ p {
 	margin: 0 4% 4% 0;
 	padding: 10px;
 	width: 29%;
+}
+.small-card:hover {
+	background: rgba(0, 0, 0, .1);
+	cursor: pointer;
 }
 .new-card {
 	border: 2px solid #000;
