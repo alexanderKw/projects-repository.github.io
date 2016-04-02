@@ -33,6 +33,10 @@ p {
 	text-transform: capitalize;
 	width: 72%;
 }
+.small-card-section:hover {
+	background: rgba(0, 0, 0, .1);
+	cursor: pointer;
+}
 .hight-card-section {
 	left: 72%;
 	max-width: 300px;
