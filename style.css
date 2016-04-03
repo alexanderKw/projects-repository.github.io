@@ -95,6 +95,13 @@ img {
 .title {
 	text-align: center;
 }
+.title + p {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
 .new-title-2 {
 	border: 1px solid #ABABAB;
 	display: inline-block;
@@ -117,6 +124,7 @@ img {
 	cursor: pointer;
 	font-size: 20px;
 	font-weight: bold;
+	left: 0;
 	outline: none;
 	padding: 12px 8px;
 	position: absolute;
