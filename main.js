@@ -43,6 +43,48 @@
         '<p><span class="title-2">Total moves</span>' +
         '<span class="title-2">' + json.objects[i].moves.length + '</span></p>'+'</div>'));
       }
+
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(fire)/gi, "<span class='char1'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(bug)/gi, "<span class='char2'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(water)/gi, "<span class='char3'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(normal)/gi, "<span class='char4'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(flying)/gi, "<span class='char5'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(poison)/gi, "<span class='char6'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(electric)/gi, "<span class='char8'>$&</span>"));
+        }
+      });
+      $('.type').children().andSelf().contents().each(function() {
+        if (this.nodeType == 3) {
+          $(this).replaceWith($(this).text().replace(/(ground)/gi, "<span class='char9'>$&</span>"));
+        }
+      });
+
       url = next;
 
       $('.small-card').click(function() {
@@ -52,11 +94,12 @@
       });
 
       $('.more').click(function() {
+        $('.more').text('Loading...');
         var xhttp = new XMLHttpRequest();
         xhttp.open('GET', 'http://pokeapi.co' + url, true);
         xhttp.send(null);
         xhttp.onreadystatechange = function() {
-          if(xhttp.readyState == 4 && xhttp.status === 200) {
+          if(xhttp.readyState == 4 && xhttp.status === 200 && url !== null) {
             var json = eval('(' + xhttp.responseText + ')');
             for(var i = 0; i < json.objects.length; i++) {
               console.log(json.meta.next);
@@ -90,6 +133,98 @@
               '<p><span class="title-2">Total moves</span>' +
               '<span class="title-2">' + json.objects[i].moves.length + '</span></p>'+'</div>'));
             }
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(fire)/gi, "<span class='char1'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(bug)/gi, "<span class='char2'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(water)/gi, "<span class='char3'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(normal)/gi, "<span class='char4'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(flying)/gi, "<span class='char5'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(poison)/gi, "<span class='char6'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(grass)/gi, "<span class='char7'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(electric)/gi, "<span class='char8'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(ground)/gi, "<span class='char9'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(fairy)/gi, "<span class='char10'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(fighting)/gi, "<span class='char11'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(psychic)/gi, "<span class='char12'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(steel)/gi, "<span class='char13'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(ice)/gi, "<span class='char14'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(ghost)/gi, "<span class='char15'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(rock)/gi, "<span class='char16'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(dragon)/gi, "<span class='char17'>$&</span>"));
+              }
+            });
+            $('.type').children().andSelf().contents().each(function() {
+              if (this.nodeType == 3) {
+                $(this).replaceWith($(this).text().replace(/(dark)/gi, "<span class='char18'>$&</span>"));
+              }
+            });
+            $('.more').text('Load More');
+
             next = json.meta.next;
             url = next;
 
@@ -98,6 +233,10 @@
               $(this).clone().prependTo($('.hight-card-section')).removeClass().addClass('new-card');
               $('.new-card .title-2').removeClass().addClass('new-title-2');
             });
+          } else if(url === null) {
+            console.log('null');
+            $('.more').text('Pokemons is Ended !!!');
+            return;
           }
         }
       });
