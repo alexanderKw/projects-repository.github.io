@@ -65,7 +65,7 @@ img {
 	display: inline;
 }
 .hight-card-section .title .new-title-2:before {
-	content: " #0";
+	content: " #";
 }
 .small-card {
 	border: 2px solid #4E4E4E;
