@@ -1,6 +1,15 @@
 (function($) {
   "use strict";
 
+  var numberId;
+  function addZeros(n) {
+    numberId = String(numberId);
+    while (numberId.length < 3) {
+      numberId = "0" + numberId;
+    }
+    return numberId;
+  }
+
   var url = '/api/v1/pokemon/?limit=12';
   var xhttp = new XMLHttpRequest();
   xhttp.open('GET', 'http://pokeapi.co' + url, true);
@@ -10,7 +19,7 @@
       var json = eval('(' + xhttp.responseText + ')');
 
       for(var i = 0; i < json.objects.length; i++) {
-        var t = json.objects[i];
+        numberId = json.objects[i].national_id;
         var type = json.objects[i].types[0];
         var type2 = json.objects[i].types[1];
         if(type && type2) {
@@ -21,9 +30,10 @@
         var next = json.meta.next;
         console.log(json.meta.next);
         $('.small-card-section').append($('<div class="small-card">' +
-        '<img src="http://pokeapi.co/media/img/' + json.objects[i].national_id + '.png">' +
+        '<img src="http://pokeapi.co/media/img/' + json.objects[i].national_id + '.png"' +
+        'alt="' + 'image ' + json.objects[i].name + '">' +
         '<h2 class="title">' + json.objects[i].name +
-        '<span class="title-2">' + json.objects[i].national_id + '</span>' + '</h2>' +
+        '<span class="title-2">' + addZeros() + '</span>' + '</h2>' +
         '<p><span class="title-2">Type</span>' +
         '<span class="type">' + num + '</span>' + '</p>' +
         '<p><span class="title-2">Attack</span>' +
@@ -101,7 +111,9 @@
         xhttp.onreadystatechange = function() {
           if(xhttp.readyState == 4 && xhttp.status === 200 && url !== null) {
             var json = eval('(' + xhttp.responseText + ')');
+
             for(var i = 0; i < json.objects.length; i++) {
+              numberId = json.objects[i].national_id;
               console.log(json.meta.next);
               var type = json.objects[i].types[0];
               var type2 = json.objects[i].types[1];
@@ -111,9 +123,10 @@
                 num = type.name;
               }
               $('.small-card-section').append($('<div class="small-card">' +
-              '<img src="http://pokeapi.co/media/img/' + json.objects[i].national_id + '.png">' +
+              '<img src="http://pokeapi.co/media/img/' + json.objects[i].national_id + '.png"' +
+              'alt="' + 'image ' + json.objects[i].name + '">' +
               '<h2 class="title">' + json.objects[i].name +
-              '<span class="title-2">' + json.objects[i].national_id + '</span>' + '</h2>' +
+              '<span class="title-2">' + addZeros() + '</span>' + '</h2>' +
               '<p><span class="title-2">Type</span>' +
               '<span class="type">' + num + '</span>' + '</p>' + 
               '<p><span class="title-2">Attack</span>' +
@@ -133,6 +146,7 @@
               '<p><span class="title-2">Total moves</span>' +
               '<span class="title-2">' + json.objects[i].moves.length + '</span></p>'+'</div>'));
             }
+
             $('.type').children().andSelf().contents().each(function() {
               if (this.nodeType == 3) {
                 $(this).replaceWith($(this).text().replace(/(fire)/gi, "<span class='char1'>$&</span>"));
