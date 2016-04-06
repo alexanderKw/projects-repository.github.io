@@ -71,7 +71,7 @@ img {
 	border: 2px solid #4E4E4E;
 	float: left;
 	margin: 0 5% 5% 0;
-	padding: 10px;
+	padding: 10px 10px 30px;
 	width: 30%;
 	min-height: 280px;
 }
@@ -95,7 +95,7 @@ img {
 }
 .title {
 	font-size: 19px;
-	margin: 20px 0 10px;
+	margin: 15px 0 10px;
 	text-align: center;
 }
 .title + p {
@@ -211,6 +211,10 @@ img {
 
 /* MOBILE */
 @media only screen and (max-width: 761px) {
+	.h1 {
+		font-size: 20px;
+		margin: 0 auto 10px;
+	}
 	.title {
 		font-size: 19px;
 	}
@@ -220,12 +224,19 @@ img {
 	}
 	.small-card {
 		float: none;
+		padding: 10px;
 		min-height: inherit;
 		width: 100%;
 	}
 	.hight-card-section {
 		left: 45%;
 		width: 56%;
+	}
+	.title {
+		margin: 8px 0;
+	}
+	.new-card {
+		padding: 8px;
 	}
 	.type > [class^="char"] {
 		margin-bottom: 6px;
