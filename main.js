@@ -248,7 +248,6 @@
               $('.new-card .title-2').removeClass().addClass('new-title-2');
             });
           } else if(url === null) {
-            console.log('null');
             $('.more').text('Pokemons is Ended !!!');
             return;
           }
